@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+{% load staticfiles %}
+<div class="" style="background-color:rgb(245,176,65);border:1px solid white ";>
+  <div class="container" style="padding:100px;margin-bottom:10px;margin-top:10px;height:600px;width:40%;background-color:rgb(44, 62, 80) );" >
+
+
+
+    <form class="" action="" method="post"> {% csrf_token %}
+
+      {% bootstrap_form form %}
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="{{ data_key }}"
+        data-amount="{{ total }}"
+        data-name="Help_Kerala"
+        data-description="{{ description }}"
+        data-image="{% static 'images/logo.jpg' %}"
+        data-locale="auto"
+        data-currency="gbp"
+        data-shipping-address="true"
+        data-billing-address="true"
+        data-zip-code="true"
+        >
+      </script><br>
+      <!-- <input type="submit" name="" value=""> -->
+    </form>
+</div>
+</div>
+{% endblock %}

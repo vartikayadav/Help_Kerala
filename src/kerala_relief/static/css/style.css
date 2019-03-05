@@ -1,0 +1,148 @@
+/* .first{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+} */
+.container{
+  width:60%;
+  height:100vh;
+  /* same as 100% */
+  overflow:hidden;
+
+}
+
+.container .column{
+  width:25%;
+  float:left;
+  height:85%;
+  /* border-right:2px solid rgba(0,0,0,0.5); */
+/* border-right:2px solid rgba(0,0,0,0.5); */
+  box-sizing: border-box;
+  z-index:1;
+
+}
+.container .column:last-child{
+
+  border-right:none;
+
+}
+.container .column .content{
+  position: relative;
+ height:100%;
+
+}
+.container .column .content h1{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:100%;
+  background: rgba(0,0,0,0.1);
+  margin:0;
+  text-align: center;
+  padding:0;
+  color: rgba(255,255,255,0.4);
+  font-size: 15em;
+  /* border-top:2px solid rgba(0,0,0,0.5); */
+  /* border-bottom:2px solid rgba(0,0,0,0.5); */
+}
+.hover1:hover{
+  text-decoration: underline;
+}
+.contmain2{
+  margin-top: 2%;
+  font-size: 250%;
+  text-align: center;
+  color:rgb(86, 101, 115);//imp color
+}
+
+.container .column .content .box{
+position:absolute;
+ top:50%;
+transform: translateY(100%);
+box-sizing: border-box;
+padding:40px;
+background: rgba(255,255,255,1);
+text-align: center;
+transition: 0.5s;
+opacity:0;
+height:55%;
+
+}
+.container .column .content .box .boxin{
+  height:100%;
+}
+.container .column .content .box h2{
+  margin:0;
+  padding:0;
+  font-size: 30px;
+  color:#262626;
+  text-decoration: underline;
+
+}
+.container .column .content .box p{
+
+  font-size: 18px;
+  color:#262626;
+
+
+}
+.container .column.active .content .box {
+opacity: 1;
+transform: translateY(-50%);
+}
+.container .column .bg{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  pointer-events: none;
+  z-index:-1;
+}
+.container .column.active .bg.bg1{
+  /* background-image:url(bg1.jpg); */
+  background-image: url(https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/08/16/Photos/Home%20Page/kerala-floods-k36E--621x414@LiveMint.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: 0.5s;
+}
+.container .column.active .bg.bg2{
+  background-image: url("http://im.rediff.com/money/2018/aug/20kerala-floods.jpg");
+  /* background-image: url(bg2.jpg); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: 0.5s;
+}
+.container .column.active .bg.bg3{
+  /* background-image: url(bg3.jpg); */
+  /* background-image: url(https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/08/20/Photos/Processed/Kerala-k9WE--621x414@LiveMint.jpg); */
+  background-image: url(https://images.indianexpress.com/2018/08/kerala-relief759.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  transition: 0.5s;
+}
+.o{
+ color:white;
+font-size: 40px;
+padding: 60px;
+}
+.o1{
+   color:white;
+  font-size: 40px;
+  padding: 60px;
+  text-decoration: underline;
+
+}
+.container .column.active .bg.bg4{
+  /* background-image: url(bg4.jpg); 2048*1152 */
+  background-image: url(http://prod-upp-image-read.ft.com/2c178942-a363-11e8-926a-7342fe5e173f);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  transition: 0.5s;
+}
