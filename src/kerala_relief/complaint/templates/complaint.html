@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<style media="screen">
+.complaint{
+  margin-left:35%;
+  margin-right:25%;
+  margin-top:10%;
+
+}
+</style>
+<div class="col-lg-12 col-sm-4">
+  <iframe class="complaint "
+      allow="microphone;"
+      width="350"
+      height="430"
+      src="https://console.dialogflow.com/api-client/demo/embedded/972fb7c6-042c-4db0-9d00-f96f855543f9">
+  </iframe>
+</div>
+
+{% endblock %}

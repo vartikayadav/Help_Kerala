@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<link rel="stylesheet" href="static/css/medicalcare.css">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<div class="container">
+  <div class="row c">
+  <div class=" col-xs-1 col-sm-4 col-lg-12 b" style="font-size:40px;text-align:center;font-family: 'Cinzel', serif;">HOSPITALS INFO
+  </div>
+  </div><br>
+<div class="row">
+
+{% for i in data %}
+<div class="col-lg-4 col-sm-12 thumbnail c"style="height:450px;border:2px solid rgb(153, 163, 164);border-radius:9px;">
+  <div class="" style="text-align:center;margin-top:10px;height:15%;margin-bottom:10px;font-size:20px;">
+{{ i.name }}
+  </div>
+  <div class="" style="height:25%;width:40%;">
+    <img src="{{ i.image.url }}" style="" width="auto" height="auto" alt=""><br>
+  </div>
+
+<div class="" style="font-family: 'Lato', sans-serif;">
+<table  style="height:200px;">
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>City:</b></td>
+    <td>{{ i.city }}</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Total Strength:</b></td>
+    <td>{{ i.total_strength }}</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Availability:</b></td>
+    {% if i.availability %}
+    <td>Available</td>
+    {% else %}
+    <td>Not Available</td>
+    {% endif %}
+  </tr>
+  <tr>
+
+    <td style="color:rgb(52, 152, 219);"><b>Location:</b></td>
+
+    <td>{{ i.location }}</td>
+  </tr>
+</table>
+<button class="btn btn-secondary button1" onclick="document.getElementById('popup').style.display='block'" align="center" style="margin-left:25%;">Proceed for help</button>
+<div class="modal" id='popup'>
+  <form class="modal-content animate" action="" method="">
+   {% csrf_token %}
+   <div class="imgcontainer">
+    <span onclick="document.getElementById('popup').style.display='none'" class="close" title='close popup'>&times;</span>
+    <img src="{% static "images/logo.jpg" %}" style="margin-left:45%;" width="50px" alt="Hk"><br>
+    <br>
+    <h1 style="text-align:center;">Fill the details </h1>
+   </div>
+
+   <div class="popcontainer">
+    Patient Name:<input type="text" placeholder="Patient Name" name="pn" value=""><br>
+    Age: <input type="text" placeholder="Age" name="age" value=""><br>
+    Sex:<select class="" name="">
+      <option value="M" name='m' ></option>
+      <option value="F" name='f'></option>
+    </select><br>
+    Problem:<textarea name="problem" rows="8" cols="48" placeholder="Enter problem"></textarea>
+   </div>
+   <button type="submit" class="btn btn-primary" style="width:40%;margin:auto;"name="button">Submit</button>
+  </form>
+</div>
+<script type="text/javascript">
+  var pop=document.getElementById('popup');
+  window.onclick=function(event){
+    if(event.target==pop)
+    {
+      pop.style.display='none';
+    }
+  }
+</script>
+
+</div>
+</div>
+{% endfor %}
+
+
+
+
+<!-- <div class="col-lg-4 col-sm-12 thumbnail c"style="height:auto;border:2px solid rgb(153, 163, 164);border-radius:9px;">
+  <div class="" style="text-align:center;margin-top:10px;margin-bottom:10px;font-size:20px;">
+A P Varkey Mission Hospital
+  </div>
+<img src="static/images/a.jpg" style="margin-bottom:20px;" width="50%" height="auto" alt=""><br>
+<div class="" style="font-family: 'Lato', sans-serif;">
+<table height="auto">
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>City:</b></td>
+    <td>Arakkunnam</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Total Strength:</b></td>
+    <td>259</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Availability:</b></td>
+    <td>Available</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Location:</b></td>
+    <td>Thottapady, Arakkunnam, Kerala 682313</td>
+  </tr>
+</table>
+<a href="#" class="btn btn-secondary" align="center" style="margin-left:25%;">Proceed for help</a>
+</div>
+</div>
+<div class="col-lg-4 col-sm-12 thumbnail c"style="height:auto;border:2px solid rgb(153, 163, 164);border-radius:9px;">
+  <div class="" style="text-align:center;margin-top:10px;margin-bottom:10px;font-size:20px;">
+Caritas Hospital
+  </div>
+<img src="static/images/b.jpg" style="margin-bottom:20px;" height="auto" width="50%"alt=""><br>
+<div class="" style="font-family: 'Lato', sans-serif;">
+<table height="auto">
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>City:</b></td>
+    <td>Kottayam</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Total Strength:</b></td>
+    <td>700</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Availability: </b></td>
+    <td>Not Available</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Location:</b></td>
+    <td>Off M.C. Road, Thellakom, Kottayam, Kerala 686630</td>
+  </tr>
+</table>
+<a href="#" class="btn btn-secondary" style="margin-left:25%;" align="center">Proceed for help</a>
+</div>
+</div>
+
+<div class="col-lg-4 col-sm-12 thumbnail c"style="height:auto;border:2px solid rgb(153, 163, 164);border-radius:9px;">
+  <div class="" style="text-align:center;margin-top:10px;margin-bottom:10px;font-size:20px;">
+Sri Ganga Ram Hospital
+  </div>
+<img src="static/images/b.jpg" style="margin-bottom:20px;" height="auto" width="50%"alt=""><br>
+<div class="" style="font-family: 'Lato', sans-serif;">
+<table height="auto">
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>City:</b></td>
+    <td>Delhi</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Total Strength:</b></td>
+    <td>1500</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Availability: </b></td>
+    <td> Available</td>
+  </tr>
+  <tr>
+    <td style="color:rgb(52, 152, 219);"><b>Location:</b></td>
+    <td>Old Rajinder Nagar, Rajinder Nagar, New Delhi, Delhi 110060</td>
+  </tr>
+</table>
+<a href="#" class="btn btn-secondary" style="margin-left:25%;" align="center">Proceed for help</a>
+</div>
+</div>
+ -->
+
+</div>
+{% endblock %}
+<!-- <div class="container medical" align="center" style="font-family: 'Merriweather', serif;">
+  <br>
+  <div class="" align="center" style="font-size:30px;text-decoration:underline;">
+    LIST OF HOSPITALS
+  </div>
+<br>
+  {% for hospital in data %}
+  <div class="card" style="width:800px;height:300px;">
+    <br>
+  <h2 > <span style="font-size:30px;">{{ hospital.name }}</span></h2>
+  <br>
+  <h4 >Total Strength:  <span style="font-size:20px;">{{ hospital.total_strength }}</span></h4>
+  <h4 >Availability:  <span style="font-size:20px;text-align:left;">{{ hospital.availability }}</span></h4>
+<h4 >Latitude:  <span style="font-size:20px;text-align:left;">{{ hospital.latitude }}</span>
+<h4 >Longitude:  <span style="font-size:20px;text-align:left;">{{ hospital.longitude }}</span>
+<h4 >Location:  <span style="font-size:20px;text-align:left;">{{ hospital.longitude }}</span>
+<br>
+</div>
+<br>
+  {% endfor %}
+
+
+</div> -->

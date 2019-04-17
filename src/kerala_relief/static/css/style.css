@@ -6,21 +6,33 @@
 .container{
   width:60%;
   height:100vh;
-  /* same as 100% */
+
   overflow:hidden;
 
 }
-
+.medical{
+  font-family: 'Merriweather', serif;
+}
 .container .column{
   width:25%;
   float:left;
-  height:85%;
+  height:75%;
   /* border-right:2px solid rgba(0,0,0,0.5); */
 /* border-right:2px solid rgba(0,0,0,0.5); */
   box-sizing: border-box;
   z-index:1;
 
 }
+
+ @media screen and (max-width: 400px) {
+    .tt {
+      font-size:25px;
+
+
+    }
+}
+
+
 .container .column:last-child{
 
   border-right:none;
@@ -127,8 +139,8 @@ transform: translateY(-50%);
 }
 .o{
  color:white;
-font-size: 40px;
-padding: 60px;
+font-size: 20px;
+
 }
 .o1{
    color:white;

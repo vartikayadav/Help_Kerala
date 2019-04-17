@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'main',
     'donate',
     'stripe',
-    'record'
+    'record',
+    'medicalcare',
+    'complaint',
+    'details'
 
 ]
 
@@ -127,14 +130,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_DIR=os.path.join(BASE_DIR,"static")
 STATIC_DIR2=os.path.join(BASE_DIR,"accounts/static")
+STATIC_DIR3=os.path.join(BASE_DIR,"medicalcare/static")
 STATICFILES_DIRS=[
 STATIC_DIR,
 STATIC_DIR2,
+STATIC_DIR3,
 ]
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'static','media')
 
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
-STRIPE_PUBLISHABLE_KEY='your publishable key'
-STRIPE_SECRET_KEY='your secret key'
+STRIPE_PUBLISHABLE_KEY='pk_test_Ueu4LngbDBdvKvMyp5hU8i6l'
+STRIPE_SECRET_KEY='sk_test_yRg4vhYzbKdjsChrENfZkxCg'
