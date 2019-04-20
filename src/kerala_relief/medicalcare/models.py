@@ -15,3 +15,14 @@ class Hospital(models.Model):
         ordering=['name']
     def __str__(self):
         return self.name
+class Patient(models.Model):
+    name=models.CharField(max_length=256)
+    age=models.IntegerField(null=True)
+    email=models.EmailField(null=True,blank=True)
+    problem=models.CharField(max_length=256,null=True)
+    date_added=models.DateTimeField(auto_now_add=True)
+    class Meta:
+        verbose_name_plural='Patients'
+        ordering=['date_added']
+    def __str__(self):
+        return self.name

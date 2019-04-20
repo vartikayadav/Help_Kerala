@@ -7,6 +7,5 @@ class UserDonateForm(forms.ModelForm):
         fields=[
         'name',
         'email',
-        'moblie_no',
-        'amount',
+        'amount'
         ]

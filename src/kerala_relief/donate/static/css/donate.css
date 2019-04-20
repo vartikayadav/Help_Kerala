@@ -1,0 +1,14 @@
+.stripe-button-el {
+background-color: rgb(rgb(149, 165, 166); !important;
+background-image: none !important;
+display:block;
+
+}
+
+.stripe-button-el span{
+  display:block;
+  position:relative;
+  color:white;
+  background-color:none;
+
+}

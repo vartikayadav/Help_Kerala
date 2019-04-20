@@ -1,66 +1,113 @@
-{% extends "base.html" %}
-{% extends "index.html" %}
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap4 %}
 {% block content %}
 
-<section class="hero is-primary">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  <link rel="stylesheet" type="text/css" href="weather.css">
+
+
+<style>
+  *{
+  	margin: 0;
+  	padding: 0;
+  }
+
+  #container{
+  	background-color:white;
+  	margin:0 auto;
+  	width: 100%;
+  	height: auto;
+  }
+
+  header{
+  	background: #00CED1;
+  	width: 100%;
+  	color:#E0FFFF;
+  }
+  #mid_header{
+  	padding:35px 0;
+  	font-family: arial;
+  	text-align: center;
+  }
+  form{
+  			font-family: #f1f1f1f1;
+  			background-color:white;
+  			width: 600px;
+  			margin: 0 auto;
+  			margin-top: 20px;
+  			padding: 30px;
+  			box-sizing: border-box;
+  		}
+  .input{
+  		padding: 1px 50px;
+  		float: left;
+  		}
+  .in1{
+  	padding: 1px 30px 1px;
+  	background-color: #1E90FF;
+  	color:white;
+  	float: left;
+  }
+  .box{
+  	width: 420px;
+  	box-sizing: border-box;
+  	margin-top: 50px;
+  	margin-left: 420px;
+  	border:1px solid lightgray;
+  	height: 200px;
+  }
+  #ss{
+  	width: 50px;
+  	margin-left: 90px;
+  	margin-top: 35px;
+  	float: left;
+  }
+  .content{text-align: center;
+  	margin-left:40px;
+  	margin-top:35px;
+  	float:left;
+  }
+  .title{
+  	font-size: 20px;
+  font-weight: bold;
+  }
+
+
+</style>
+<body>
+
+<div id="container">
+
+<header>
+        <div id="mid_header">
+            <h1 class="title1">
                 What's the weather like?
             </h1>
         </div>
-    </div>
-</section>
+</header>
 <section class="section">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-offset-4 is-4">
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="field has-addons">
-                        <div class="control is-expanded">
-                            {{ form.name }}
-                        </div>
-                        <div class="control">
-                            <button class="button is-info">
-                                Add City
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div>
+    	<form>
+    		<div class="form-group">
+                 <input class="input" type="text" placeholder="City Name">
+                 <button class="in1"> Add City</button>
+             </div>
+         </form>
     </div>
-</section>
-<section class="section">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-offset-4 is-4">
-                {% for i in weather_data %}
-                <div class="box">
-                    <article class="media">
-                        <div class="media-left">
-                            <figure class="image is-50x50">
-                                <img src="http://openweathermap.org/img/w/{{ i.icon }}.png" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="media-content">
-                            <div class="content">
-                                <p>
-                                    <span class="title">{{ i.city }}</span>
+ <div class="box">
+       <img id="ss" src="download.jpg" alt="Image">
+            <div class="content">
+
+                                    <span class="title">Las Vegas</span>
                                     <br>
-                                    <span class="subtitle">{{ i.temperature }}° F</span>
-                                    <br> {{ i.description }}
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
+                                    <span class="subtitle">29° F</span>
+                                    <br>thunderstrom
+           </div>
+
+ </div>
+ </section>
+ </div>
 
 
 {% endblock %}

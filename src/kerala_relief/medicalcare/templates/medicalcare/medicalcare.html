@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
+{% load bootstrap4 %}
 {% block content %}
+<!-- shit -->
+
+
+<!-- shit -->
+
+
+
+
+
 <link rel="stylesheet" href="static/css/medicalcare.css">
 <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -49,26 +58,13 @@
 </table>
 <button class="btn btn-secondary button1" onclick="document.getElementById('popup').style.display='block'" align="center" style="margin-left:25%;">Proceed for help</button>
 <div class="modal" id='popup'>
-  <form class="modal-content animate" action="" method="">
+  <form style="height:500px;width:500px;"class="modal-content animate" action="" method="POST">
    {% csrf_token %}
-   <div class="imgcontainer">
-    <span onclick="document.getElementById('popup').style.display='none'" class="close" title='close popup'>&times;</span>
-    <img src="{% static "images/logo.jpg" %}" style="margin-left:45%;" width="50px" alt="Hk"><br>
-    <br>
-    <h1 style="text-align:center;">Fill the details </h1>
-   </div>
+   <h1 style="text-align:center;">Proceed to Apply</h1>
+    {% bootstrap_form form %}
 
-   <div class="popcontainer">
-    Patient Name:<input type="text" placeholder="Patient Name" name="pn" value=""><br>
-    Age: <input type="text" placeholder="Age" name="age" value=""><br>
-    Sex:<select class="" name="">
-      <option value="M" name='m' ></option>
-      <option value="F" name='f'></option>
-    </select><br>
-    Problem:<textarea name="problem" rows="8" cols="48" placeholder="Enter problem"></textarea>
-   </div>
    <button type="submit" class="btn btn-primary" style="width:40%;margin:auto;"name="button">Submit</button>
-  </form>
+</form>
 </div>
 <script type="text/javascript">
   var pop=document.getElementById('popup');

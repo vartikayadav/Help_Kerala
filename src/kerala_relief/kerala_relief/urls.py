@@ -31,6 +31,7 @@ urlpatterns = [
     path('donate', include('donate.urls')),
     path('medicalcare', include('medicalcare.urls',namespace='medical')),
     path('statistics',include('record.urls')),
+    path('weather',include('weather.urls',namespace='weatherr')),
     path('complaint', include('complaint.urls',namespace='complaint')),
 
 ]

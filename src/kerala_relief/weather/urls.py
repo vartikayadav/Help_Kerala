@@ -21,5 +21,5 @@ from . import views
 
 app_name='weather'
 urlpatterns = [
-    path('predict', views.indexx,name='predict'), #the path for our index view
+    path('predict', views.indexx,name='weather1'), #the path for our index view
 ]

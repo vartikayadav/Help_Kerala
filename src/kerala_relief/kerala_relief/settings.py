@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'record',
     'medicalcare',
     'complaint',
-    'details'
+    'details',
+    'weather'
 
 ]
 

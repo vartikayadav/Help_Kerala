@@ -25,12 +25,12 @@
 }
 .modal{
   display:none;
-  position: fixed;
+  /* position: fixed; */
   z-index:1;
   margin:auto;
   width:80%;
-  height:auto;
-  
+  height:90px;
+
  margin-top: 40px;
   background-color: rgba(0,0,0,0);
 

@@ -1,94 +1,103 @@
 {% extends "base.html" %}
 {% block content %}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<div >
-<div class="container">
-    <div class="column active">
-      <div class="content">
-        <h1>1</h1>
-        <a href="{% url 'donate' %}">
-          <div class="box">
-            <h2>Donate </h2>
-            <p>Kerala is suffering from massive flood havoc.Hundereds of lives have been lost and thousands have become homeless.Donate to the Chief Minister fund and show contribution. </p>
+ <style media="screen">
+   div{
+            margin: 0;
+            padding: 0;
+        }
+        #box11{
+            height: 100vh;
+            width: 100%;
+            background-image: url('static/images/donate.jpg');
+            background-size: cover;
+            display: table;
+            background-attachment: fixed;
+        }
+        #box2{
+            height: 100vh;
+            width: 100%;
+            background-image: url('static/images/medical.jpg');
+            background-size: cover;
+            display: table;
+            background-attachment: fixed;
+        }
+        #box3{
+            height: 100vh;
+            width: 100%;
+            background-image: url('static/images/C.jpg');
+            background-size: cover;
+            display: table;
+            background-attachment: fixed;
+        }
 
-          </div>
-        </a>
+        #box4{
+            height: 100vh;
+            width: 100%;
+            background-image: url('static/images/weather.jpg');
+            background-size: cover;
+            display: table;
+            background-attachment: fixed;
+        }
+        h1{
+            font-family: arial black;
+            font-size: 60px;
+            color:white;
+            margin : 0px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        p{
+             font-family: arial black;
+            font-size: 30px;
+            color:white;
+            margin: 0px;
+            vertical-align: middle;
+            text-align: center;
+            display: table-row;
+            }
 
+ </style>
 
-      </div>
-
-
-     <div class="bg bg1"></div>
-
-    </div>
-
-    <div class="column">
-      <div class="content">
-        <h1>2</h1>
-        <span class="box">
-          <h2>Maps</h2>
-          <p>Find the right path to reach safe place and move on to your desired destination.Use maps to find out the correct path to follow on, in the current scenario.Let's explore..  </p>
-
-        </span>
-
-      </div>
-
-
-     <div class="bg bg2"></div>
-
-     </div>
-     <div class="column">
-       <div class="content">
-         <h1>3</h1>
-         <a href="{% url 'statistics' %}">
-         <span class="box">
-          <div class="boxin"> <h2>Statistics </h2>
-           <p> Analyse the statistical data regarding the requirements and expenditure of people suffering from Kerala floods. </p></div>
-
-         </span>
-         </a>
-       </div>
-
-
-      <div class="bg bg3"></div>
-
-     </div>
-
-     <div class="column">
-       <div class="content">
-         <h1>4</h1>
-         <a href="/">
-           <span class="box">
-             <h2>Predict Weather</h2>
-             <p>Want to know the weather conditions prevailing in your region.Use our tool to find it and be informed beforehand. </p>
-           </span>
-
-         </a>
-       </div>
-
-
-      <div class="bg bg4"></div><br>
-
-     </div><br><br>
-
-<div class="" style="width:100%;height:450px;">
-
+ <div id="box11">
+            <h1><a style="color:white;text-decoration:none;" href="{% url 'donate' %}">DONATE</a></h1>
+            <p>Kerala is suffering from massive flood havoc.Hundereds of lives have been lost and thousands have become homeless.Donate to the Chief Minister fund and show contribution.</p>
+        </div>
+        <div id="box2">
+            <h1>MEDICAL</h1>
+            <p> To provide the best medical facilities to the affected area. </p>
 </div>
-  <marquee width="80%" style="height:auto;color:rgb(91, 44, 111);font-size:150%;"><strong>Please take the Receipt once done the donation from "Print Receipt"</strong> </marquee><br>
-</div>
-<div  class="" style="background-color:rgb(149, 165, 166  );">
+        <!-- <div id="box3">
+            <h1>COMPLAINTS</h1>
+            <p></p>
+        </div> -->
+
+        <div id="box4">
+            <h1><a style="color:white;text-decoration:none;" href="{% url 'weatherr:weather1' %}">PREDICT WEATHER</a></h1>
+            <p>Determine the weather of different regions and get updated.</p>
+        </div>
+
+<br><br>
+<!-- begin -->
+<div  class="tt" style="font-size:30px;background-color:rgb(44, 62, 80  );color:white;">
 <div class="row">
-<div class="col-lg-3">{details}</div>
-<div class="col-lg-3">&#8377; 50,49,008 </div>
-<div class="col-lg-3">&#8377; 5,89,009</div>
-<div class="col-lg-3">12</div>
+<div class="col-lg-3 col-sm-3 thumbnail " style="border:2px solid white;">
+8,396 <br>
+Donors
 </div>
-
-<div class="row">
-<div class="col-lg-3">Donors</div>
-<div class="col-lg-3">Raised </div>
-<div class="col-lg-3">Expenditure</div>
-<div class="col-lg-3">Countries</div>
+<div class="col-lg-3 col-sm-3 thumbnail" style="border:2px solid white;">
+  &#8377;50,49,008<br>
+  Raised
+</div>
+<div class="col-lg-3 col-sm-3 thumbnail" style="border:2px solid white;">
+  &#8377;5,89,009<br>
+  Expenditure
+</div>
+<div class="col-lg-3 col-sm-3 thumbnail" style="border:2px solid white;">
+12<br>
+Countries
+</div>
 </div>
 
 
@@ -107,14 +116,6 @@ We are a Non-Profitable Organisation to provide help to them.
 </div>
 </div>
 </div>
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script type="text/javascript">
-   $(document).on('mouseover','.container .column',function(){
-     $(this).addClass('active').siblings().removeClass('active')
-   })
-  </script>
 
 
 
